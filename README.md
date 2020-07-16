@@ -1,2 +1,5 @@
-# HP
-[ HP ] Holiday Planner Web Application
+# HPS
+[ HPS ] Holiday Planning System
+Javascript Web Application
+
+by Christopher Harris
