@@ -1,3 +1,6 @@
+/* imports */
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 /* global : reset */
 * {
     box-sizing: border-box;
@@ -14,8 +17,8 @@
     --main: #042331;
 
     /* font family */
-    --font-main: 'Josefin Sans', sans-serif;
-    --font-alt:  'Dosis', sans-serif;
+    --font-main: 'Raleway', sans-serif;
+    /* font-family: 'Raleway', sans-serif; */
 
     /* heading mobile */
     --h2-mob: 2rem;
@@ -54,96 +57,305 @@
     --debugging: 3px dotted darkred;
 
 }
-/* page */
+
+/* global : page */
 .page {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
+    height: 100%;
     width: 100%;
 }
-.page section {
+.page main {
     max-width: 1920px;
 }
 
-/* grid */
-section {
+/* global : grid */
+header,
+section,
+main,
+footer {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-auto-rows: minmax(50px, auto);
     width: 100%;
-    /* margin-bottom: 100px; */
-
-    /* dev */
-    border: var(--wireframe);
 }
 
-/* flex */
+/* global : flex */
 .elmnts {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: var(--sm);
+    height: 100%;
+    width: 100%;
 
     /* dev */
     border: var(--debugging);
+
 }
 
-/* app : layout */
+/* global : headings */
+h2 {
+    font-size: var(--h2-mob);
+}
+h3 {
+    font-size: var(--h3-mob);
+}
+h4 {
+    font-size: var(--h4-mob);
+}
+h5 {
+    font-size: var(--h5-mob);
+}
+h2, h3, h4, h5 {
+    color: var(--main);
+    letter-spacing: 2px;
+    padding-bottom: var(--sm);
+    text-transform: capitalize;
+}
+
+/* global : fonts */
+p {
+    color: var(--grey);
+    font-size: var(--txt-sm);
+    letter-spacing: 2px;
+    line-height: 1.6;
+    padding-bottom: var(--md);
+}
+
+/* app */
 #app {
-    background: var(--grey);
+    font-family: var(--font-main);
     position: relative;
-}
-#app .elmnts {
     min-height: 100vh;
+    height: 100%;
 }
-#app .elmnts:nth-child(1) {
+#app nav {
     grid-column: span 6;
     grid-row: span 2;
 }
-#app .elmnts:nth-child(2) {
+#app header {
+    grid-column: span 6;
+    grid-row: span 2;
+}
+#app section {
+    grid-column: span 6;
+    grid-row: span 4;
+}
+#app footer {
     grid-column: span 6;
     grid-row: span 2;
 }
 
-/* app : form */
-#app form {
-    border: 2px solid var(--grey);
-    display: flex;
+/* header : layout */
+header .elmnts {
+    /* dev */
+    border: var(--debugging);
+}
+header .elmnts:nth-child(1) {
+    grid-column: span 6;
+    grid-row: span 1;
+}
+header .elmnts:nth-child(2) {
+    grid-column: span 6;
+    grid-row: span 1;
+
+    justify-content: flex-start;
     align-items: flex-start;
-    justify-content: center;
+}
+
+/* nav : layout */
+nav {
+    display: flex;
     flex-direction: column;
-    height: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
     width: 100%;
-    padding: var(--sm);
 
     /* dev */
     border: var(--wireframe);
 }
-#app label {
+/* nav : list */
+nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    
+    /* dev */
+    border: var(--component);
+}
+nav li {
+    list-style: none;
+    width: 80%;
+    
+    /* dev */
+    border: var(--debugging);
+}
+
+/* abo : layout */
+#abo .elmnts {
+    /* dev */
+    border: var(--debugging);
+}
+#abo .elmnts:nth-child(1) {
+    grid-column: span 6;
+    grid-row: span 1;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+#abo .elmnts:nth-child(2) {
+    grid-column: span 6;
+    grid-row: span 1;
+}
+
+/* mdl : layout */
+#mdl {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+    color: var(--white);
+    max-height: 100vh;
+
+}
+#mdl .elmnts:nth-child(1) {
+    grid-column: span 6;
+    grid-row: span 1;
+    
+    align-items: flex-start;
+}
+#mdl .elmnts:nth-child(2) {
+    grid-column: span 6;
+    grid-row: span 1;
+}
+#mdl .elmnts:nth-child(3) {
+    grid-column: span 6;
+    grid-row: span 1;
+}
+/* mdl : form */
+#mdl form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    
+    /* dev */
+    border: var(--debugging);
+}
+#mdl label {
     padding-bottom: var(--sm);
     font-weight: bold;
     letter-spacing: 2px;
     text-transform: capitalize;
 }
-#app input {
+#mdl input {
     margin-bottom: 10px;
     padding-left: var(--sm);
     transition: all 500ms ease;
     position: relative;
     min-height: 40px;
-    max-width: 300px;
     width: 100%;
 }
-#app input:focus {
+#mdl input:focus {
     font-weight: bold;
     letter-spacing: 2px;
     text-align: center;
     transition: all 300ms ease-out;
 }
-#app button {
+#mdl h3 {
+    color: var(--white);
+}
+/* edt : layout */
+#edt {
+    /* dev */
+    border: var(--wireframe);
+}
+#edt .elmnts {
+    border: var(--debugging);
+}
+#edt .elmnts:nth-child(1) {
+    grid-column: span 6;
+    grid-row: span 1;
+}
+#edt .elmnts:nth-child(2) {
+    grid-column: span 6;
+    grid-row: span 1;
+}
+#edt .elmnts:nth-child(3) {
+    grid-column: span 6;
+    grid-row: span 1;
+}
+
+/* tml : layout */
+#tml {
+    /* dev */
+    border: var(--wireframe);
+}
+#tml .elmnts {
+    border: var(--debugging);
+}
+#tml .elmnts:nth-child(1) {
+    grid-column: span 6;
+    grid-row: span 1;
+}
+#tml .elmnts:nth-child(2) {
+    grid-column: span 6;
+    grid-row: span 1;
+}
+#tml .elmnts:nth-child(3) {
+    grid-column: span 6;
+    grid-row: span 1;
+}
+
+/* buttons */
+nav button {
+    background: transparent;
+    width: 100%;
+    padding: var(--sm);
+    font-size: var(--txt-sm);
+
+    /* dev */
+    border: 3px solid var(--black);
+}
+nav li button {
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+#abo button {
+    background: var(--main);
+    border: none;
+    color: var(--white);
+    font-size: var(--txt-sm);
+    font-weight: bold;
+    letter-spacing: 4px;
+    
+    min-height: 22px;
+    padding: var(--sm);
+    width: 60%;
+}
+#mdl #btn_ext {
+    background: transparent;
+    border: 2px solid var(--white);
+    padding: var(--sm);
+    margin-bottom: var(--md);
+    width: 100%;
+}
+#mdl #btn_ext i {
+    color: var(--white);
+    font-size: var(--txt-sm);
+}
+#mdl button {
     background: var(--main);
     border: none;
     color: var(--white);
@@ -153,114 +365,8 @@ section {
     padding: var(--sm);
     text-transform: capitalize;
     min-height: 30px;
-    max-width: 300px;
     width: 100%;
 }
 
-/* app : list */
-#app ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    
-    /* dev */
-    border: var(--wireframe);
-}
-#app li {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    background: var(--white);
-    border: 2px solid var(--black);
-    list-style-type: none;
-    margin: var(--sm);
-    min-height: 300px;
-    padding: var(--sm);
-}
-#app li h3 {
-    font-size: var(--h3-mob);
-    letter-spacing: 2px;
-    text-transform: capitalize;
-    padding-bottom: var(--sm);
-}
-#app li h5 {
-    font-size: var(--h5-mob);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-style: italic;
-    padding-bottom: var(--sm);
-
-}
-#app li p {
-    font-style: italic;
-    letter-spacing: 2px;
-    text-transform: lowercase;
-    padding-top: var(--sm);
-}
-#app li span {
-    font-weight: bold;
-    text-decoration: underline;
-    letter-spacing: 3px;
-}
-
-/* app : style */
-#app h2  {
-    font-size: var(--h2-mob);
-    text-transform: capitalize;
-    letter-spacing: 3px;
-}
-#app p {
-    font-size: var(--txt-sm);
-    font-style: italic;
-    letter-spacing: 1px;
-    padding-top: var(--sm);
-    padding-bottom: var(--md);
-    text-transform: capitalize;
-}
-
-/* media : tablet */
-@media (min-width: 760px) {
-    
-    /* page */
-    .page {
-        padding: var(--md);
-    }
-
-    /* grids */
-    section {
-        gap: 10px;
-        grid-template-columns: repeat(12, 1fr);
-        grid-auto-rows: minmax(100px, auto);
-
-        width: 100%;
-        max-height: 100vh;
-
-        /* dev */
-        background: var(--white);
-    }
-
-    /* app */
-    #app .elmnts:nth-child(1) {
-        grid-column: span 4;
-        grid-row: span 2;
-    }
-    #app .elmnts:nth-child(2) {
-        grid-column: span 8;
-        grid-row: span 2;
-    }
-
-    
-
-    
-    
-    
-    
-    
-
-
-
-}
+/* media : desktop */
+@media (min-width: 960px) {}

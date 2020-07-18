@@ -1,59 +1,207 @@
+// app selectors
+let app = document.querySelector('#app');
+let abo = document.querySelector('#abo');
+let hed = document.querySelector('#hed');
+let edt = document.querySelector('#edt');
+let tml = document.querySelector('#tml');
+let mdl = document.querySelector('#mdl');
+
+// nav selectors
+let nav = document.querySelector('#nav');
+let opn = document.querySelector('#opn');
+let icn = document.querySelector('#icn');
+let nvu = document.querySelector('#nvu');
+
+// btn selectors
+let btn_nav = document.querySelector('#btn_nav');
+let btn_ext = document.querySelector('#btn_ext');
+let btn_sub = document.querySelector('#btn_sub');
+let btn_edt = document.querySelector('#btn_edt');
+let btn_tml = document.querySelector('#btn_tml');
+let btn_mdl = document.querySelector('#btn_mdl');
+
+// utl selectors
+let pos;
+
 /*
+    EVENTS
 
-    [ HP ] : Holiday Planner Web Application
-
-    Scope :
-    
-            develop an easy & intuitive planning process for future travellers
-            helps in planning out destinations, timeframes, activities & more
-
-    Features :
-
-            unsplash api for image attach
-            combine list items to produce a holiday timeline
-            create, remove, update, delete & edit the existing timeline
-            save to cloud [ db ], save to local device [ pc / mob ], save to local storage [ web ]
+        1. ev : btn_nav
+        2. ev : btn_run
+        3. ev : btn_sub
+        4. ev : btn_ext
+        5. ev : btn_edt
+        6. ev : btn_tml
 
 */
 
-// app selector
-const app = document.querySelector('#app');
+// 1. ev : btn nav
+btn_nav.addEventListener('click', ()=> {
 
-// mod selector
-let mod;
+    // validate nav height
+    if (nav.style.display.height != '90vh') {
+        
+        // apply a transition to nav elemnt
+        nav.style.transition = 'all 420ms ease';
 
-// form selectors
-let cou = document.querySelector('#cou');
-let loc = document.querySelector('#loc');
-let str = document.querySelector('#str');
-let end = document.querySelector('#end');
+        // apply height to nav element
+        nav.style.height = '90vh';
+    
+    }
+    // validate nav ul
+    if (nvu.style.display == 'none') {
+    
+        // display nav ul
+        nvu.style.display = 'flex';
+    }
+    // validate btn class
+    if (icn.className == 'fas fa-bars') {
+    
+        // change btn class
+        icn.className = 'fas fa-times';
+    }
+    else {
+    
+        // reset nav height to default
+        nav.style.height = '15vh';
+        // hide nav ul
+        nvu.style.display = 'none';
+        // default btn class
+        icn.className = 'fas fa-bars';
 
-// button selectors
-let sub = document.querySelector('#sub');
+    }
 
-// event sub : submit button
-sub.addEventListener('click', (e)=>{
+});
+
+// 2. ev : btn run
+btn_run.addEventListener('click', ()=> {
+
+    // init run
+    run();
+
+});
+
+// 3. ev : btn sub
+btn_sub.addEventListener('click', (e)=>{
 
     // prevent form submit
     e.preventDefault();
     
     // init validate function
     val();
-    
+
     // test
     console.log('sub btn clicked');
 
 });
 
+// 4. ev : btn ext
+btn_ext.addEventListener('click', ()=> {
+
+    // validate mod
+    if (mdl.style.display != 'none') {
+        // default mdl style
+        mdl.style.display = 'none';
+        bdy.style.overflow = 'auto';
+
+        // test
+        console.log('mod removed');
+        console.log('form removed');
+    }
+    else {
+        // mdl active
+        mdl.style.display = 'grid';
+    }
+
+});
+
+// 4. ev : btn edt
+
+// 5. ev : btn tml
+
 /*
-    val function
-
-    init on click of submit button
-    validate cou, loc, str + end date
-    provide error msg to user
-    init run function on completion
-
+    FUNCTIONS
+        1.  fn : mob
+        2.  fn : run
+        3.  fn : mod
+        4.  fn : val
+        5.  fn : out
+        6.  fn : edt
+        7.  fn : tml
+        8.  fn : scy
+        9.  fn : cal
+        10. fn : uns
 */
+
+// 1. fn : mob
+mob = () => {
+
+    // assign nav height
+    nav.style.height = '15vh';
+    // hide nav ul
+    nvu.style.display = 'none';
+
+};
+
+// init mob
+mob();
+
+// 2. fn : run
+run = () => {
+
+    // init mod
+    mod();
+
+};
+
+// 3. fn : mod
+mod = () => {
+
+    // init scy
+    scy();
+    
+    // validate form
+    if (mdl.style.display == 'none') {
+        // display mod
+        mdl.style.display = 'grid';
+        mdl.style.transition = '300ms all ease';
+        
+        // mdl style
+        mdl.style.position = 'absolute';
+        mdl.style.top = '0';
+        mdl.style.left = '0';
+        mdl.style.width = '100%';
+        mdl.style.height = '100%';
+        mdl.style.background = 'var(--black)';
+        mdl.style.zIndex = '999';
+        mdl.style.marginTop = pos + 'px';
+        
+        // test
+        console.log('modal active');
+    }
+    // validate body overflow
+    if (bdy.style.overflow != 'hidden') {
+        // apply overflow to body
+        bdy.style.overflow = 'hidden';
+    }
+    else {
+        // default mdl style
+        mdl.style.display = 'none';
+        bdy.style.overflow = 'auto';
+
+        // test
+        console.log('mod removed');
+        console.log('form removed');
+    }
+
+    // append elements to app
+    app.appendChild(mdl);
+
+    // test
+    console.log('mdl appended to app');
+};
+
+// 4. fn : val 
 val = () => {
 
     // form error selectors
@@ -166,117 +314,75 @@ val = () => {
         str.style.border = '2px solid var(--black)';
         end.style.border = '2px solid var(--black)';
 
-        // init run function
-        run();
-
         // test
         console.log('validation passed, resetting form');
+
+        // init out
+        out();
+
+        // test
+        console.log('init out');
 
     }
 
 }
 
-/*
-    run function
+// 5. fn : out
+out = () => {
 
-    initiated after validation function has been run
-    produce a preview modal for users
-    provides visual feedback
-    enables background attachment and editing functions
+    // validate views
+    if (bdy.style.overflow == 'hidden') {
+        bdy.style.overflow = 'auto';
+    }
+    if (mdl.style.display != 'none') {
+        mdl.style.display = 'none';
 
-*/
-run = () => {
+        // test
+        console.log('mdl removed');
+    }
+    if (hed.style.display != 'none') {
+        hed.style.display = 'none';
 
-    // mod creation
-    let mod = document.createElement('section');
+        // test
+        console.log('hed removed');
+    }
+    if (abo.style.display != 'none') {
+        abo.style.display = 'none';
+        
+        // test
+        console.log('run removed');
+    }
     
-    // ele creation
-    let ele = document.createElement('div');
+    // out creator
+    let out = document.createElement('section');
+    let plh = document.createElement('h2');
     
-    // ul creation
-    let ul = document.createElement('ul');
+    // out style
+    out.style.position = 'relative';
+    out.style.background = 'lightblue';
     
-    // li creation
-    let li = document.createElement('li');
+    // placeholder txt
+    plh.innerHTML = 'placeholder text for output';
+    plh.style.border = 'var(--debugging)';
+    plh.style.position = 'absolute';
+    plh.style.top = '0';
+    plh.style.left = '0';
+    plh.style.width = '100%';
+    plh.style.height = '100%';
+    plh.style.display = 'flex';
+    plh.style.justifyContent = 'center';
+    plh.style.alignItems = 'center';
     
-    // btn creation
-    let ext = document.createElement('button');
-
-    // mod styles
-    mod.style.position = 'absolute';
-    mod.style.top = '0';
-    mod.style.left = '0';
-    mod.style.width = '100%';
-    mod.style.height = '100%';
-    mod.style.background = 'var(--ovl-drk)';
-    mod.style.zIndex = '100';
-
-    // ele styles
-    ele.className = 'elmnts';
-    ele.style.gridColumn = 'span 6';
-    ele.style.gridRow = 'span 2';
-
-    // ul styles
-    ul.style.display = 'flex';
-    ul.style.flexDirection = 'column';
-    ul.style.justifyContent = 'space-between';
-    ul.style.alignItems = 'center';
-    ul.style.height = '100%';
-    ul.style.width = '100%';
-
-    // li styles
-    li.style.width = '100%';
-    li.style.height = '100%';
-
-    // output creation
-    let h3 = document.createElement('h3');
-    let h5 = document.createElement('h5');
-    let ds = document.createElement('span');
-    let de = document.createElement('span');
-    
-    // assign input value to output elmnts
-    h3.innerHTML = cou.value;
-    h5.innerHTML = loc.value;
-    ds.innerHTML = str.value;
-    de.innerHTML = end.value;
-
-    // append values to li
-    li.appendChild(h3);
-    li.appendChild(h5);
-    li.appendChild(ds);
-    li.appendChild(de);
-
-    // append li to ul
-    ul.appendChild(li);
-    
-    // append ul to ele
-    ele.appendChild(ul);
-
-    // append ele to mod
-    mod.appendChild(ele);
-
-    // append mod to app
-    app.appendChild(mod);
-
-    // event li : edt function
-    li.addEventListener('click', edt());
+    // append plh to out
+    out.appendChild(plh);
+    // append out to app
+    app.appendChild(out);
 
     // test
-    console.log('run active, modal loaded');
+    console.log('out view...'); // out here
+};
 
-}
-
-/*
-    edt function [ -- still in testing phase -- ]
-
-    init during prv / mod cycle
-    allow user to edit all elements in object
-    provide user with background & color opt
-
-    -- change event from edt to li object in production --
-
-
-*/
+// 6. fn : edt
 edt = () => {
     
     // prv selector
@@ -309,23 +415,44 @@ edt = () => {
         // test
         console.log(prv[i]);
     }
-    
 
 }
 
-// init edit
-edt();
+// 7. fn : tml
+tml = () => {
+    
+    // validate tml
+    if (tml.style.display = 'none') {
+        
+        // display tml
+        tml.style.display = 'grid';
+        
+        // remove app elements
+        hed.style.display = 'none';
+        edt.style.display = 'none';
+        run.style.display = 'none';
+    }
+    else {
 
-/*
-    uns function
+        // default tml style
+        tml.style.diplay = 'none';
+    }
 
-    provide in-app link to unsplash photo database
-    search for images related user destination
-    allow users to attach image as background or header
+};
 
-    -- any misc unsplash features the api provides --
+// 8. fn : scy
+scy = () => {
+    
+    // window position
+    pos = window.scrollY;
+    
+    // test
+    console.log(pos + 'px');
+};
 
-*/
+// 9. fn : cal
+
+// 10. fn : uns
 uns = () => {
 
     // unsplash api key

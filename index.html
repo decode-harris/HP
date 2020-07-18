@@ -7,105 +7,169 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="developer" content="Christhoper Harris">
     <!-- page -->
-    <title>HP | Des</title>
+    <title>HP | App</title>
     <!-- css -->
     <link rel="stylesheet" href="src/css/index.css">
     <!-- js -->
     <script defer src="src/js/index.js"></script>
     <!-- libs -->
     <script src="https://kit.fontawesome.com/4dff4a55ad.js" crossorigin="anonymous"></script>
+    <!-- fonts -->
+    
 
 </head>
-<body>
+<body id="bdy">
 
-    
-<!-- page -->
+    <!-- page -->
 <div class="page">
 
     <!-- app -->
-    <section id="app">
+    <main id="app">
 
-        <!-- elmnts -->
-        <div class="elmnts">
-            <!-- form -->
-            <form action="/">
+        <!-- header -->
+        <header id="hed">
+
+            <!-- elmnts -->
+            <div class="elmnts">
+                <!-- nav -->
+                <nav id="nav">
+                    <!-- btn nav -->
+                    <button id="btn_nav"><i id="icn" class="fas fa-bars"></i></button>
+                    <!-- btn nav -->
+
+                    <!-- nvu -->
+                    <ul id="nvu">
+                        <!-- li -->
+                        <li><button id="btn_inf"><a href="lay.html">about</a></button></li>
+                        <li><button id="btn_app"><a href="app.html">app</a></button></li>
+                        <li><button id="btn_mor"><a href="lay.html">more</a></button></li>
+                        <!-- li -->
+                    </ul>
+                    <!-- nvu -->
+                </nav>
+                <!-- nav -->
+            </div>
+            <!-- elmnts -->
+        
+        </header>
+        <!-- header -->
+
+        <!-- run -->
+        <section id="abo">
+            <!-- elmnts -->
+            <div class="elmnts">
+                <h3>how to begin</h3>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, quidem.
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, quidem.
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, quidem.
+                </p>
                 
-                <!-- title -->
-                <h2>where to next?</h2>
+                
+            </div>
+            <div class="elmnts">
+                <!-- btn run -->
+                <button id="btn_run">run</button>
+                <!-- btn run -->
+            </div>
+            <!-- elmnts -->
+
+        </section>
+        <!-- run -->
+
+        <!-- edt -->
+        <section id="edt" style="display:none">
+
+            <!-- elmnts -->
+            <div class="elmnts">
+                <!-- edt : frm -->
+            </div>
+            <div class="elmnts">
+                <!-- edt : img -->
+            </div>
+            <div class="elmnts">
+                <!-- edt : quo -->
+            </div>
+            <div class="elmnts">
+                <!-- edt : pnl -->
+            </div>
+            <!-- elmnts -->
+
+        </section>
+        <!-- edt -->
+
+        <!-- tml -->
+        <section id="tml" style="display:none">
+            
+            <!-- elmnts -->
+            <div class="elmnts">
+                <!-- ovv -->
+                <ul id="ovv">
+                    <!-- ovv li -->
+                    <li>
+                        <p>overview item 01</p>
+                    </li>
+                    <li>
+                        <p>overview item 02</p>
+                    </li>
+                    <li>
+                        <p>overview item 03</p>
+                    </li>
+                    <!-- ovv li -->
+                </ul>
+                <!-- ovv -->
+            </div>
+            <!-- elmnts -->
+        
+        </section>
+        <!-- tml -->
+
+        <!-- mod -->
+        <div id="mdl" style="display:none">
+
+            <!-- elmnts -->
+            <div class="elmnts">
+                <!-- btn ext -->
+                <button id="btn_ext"><i class="fas fa-times"></i></button>
+                <!-- btn ext -->
+
+                <!-- form title -->
+                <h3>where to next?</h3>
                 <p>create a holiday timline today!</p>
-                <!-- title -->
-                
-                <!-- input -->
-                <label for="cou">
-                    country <br>
-                    <span id="cou_err"></span>
-                </label>
-                <input type="text" name="cou" id="cou" class="inp">
-                <label for="loc">location <span id="loc_err"></span></label>
-                <input type="text" name="loc" id="loc" class="inp">
-                <label for="str">start <span id="str_err"></span></label>
-                <input type="date" name="str" id="str" class="inp">
-                <label for="end">end <span id="end_err"></span></label>
-                <input type="date" name="end" id="end" class="inp">
-                <!-- input -->
-
+                <!-- form title -->
+            </div>
+            <div class="elmnts">
+                <!-- form -->
+                <form id="frm">
+                    <label for="cou">country <br> <span id="cou_err"></span></label>
+                    <input type="text" name="cou" id="cou" class="inp">
+                    <label for="loc">location <br> <span id="loc_err"></span></label>
+                    <input type="text" name="loc" id="loc" class="inp">
+                    <label for="str">start <br> <span id="str_err"></span></label>
+                    <input type="date" name="str" id="str" class="inp">
+                    <label for="end">end <br> <span id="end_err"></span></label>
+                    <input type="date" name="end" id="end" class="inp">
+                </form>
+                <!-- form -->
+            </div>
+            <div class="elmnts">
                 <!-- submit -->
-                <button id="sub">submit</button>
+                <button id="btn_sub">submit</button>
                 <!-- submit -->
-            
-            </form>
-            <!-- form -->
+            </div>
+            <!-- elmnts -->
+                    
         </div>
-        <div class="elmnts">
-            
-            <!-- output -->
-            <ul id="output">
-                <!-- items -->
-                <li class="prv">
-                    <!-- info -->
-                    <h3>country h3</h3>
-                    <h5>location h5</h5>
-                    <p>
-                        I will be travelling from the
-                        <span>01 / 01 / 2020</span> 
-                        to the
-                        <span>30 / 12 / 2020</span>.
-                    </p>
-                    <!-- info -->
-                </li>
-                <li class="prv">
-                    <!-- info -->
-                    <h3>country h3</h3>
-                    <h5>location h5</h5>
-                    <p>
-                        I will be travelling from the
-                        <span>01 / 01 / 2020</span> 
-                        to the
-                        <span>30 / 12 / 2020</span>.
-                    </p>
-                    <!-- info -->
-                </li>
-                <li class="prv">
-                    <!-- info -->
-                    <h3>country h3</h3>
-                    <h5>location h5</h5>
-                    <p>
-                        I will be travelling from the
-                        <span>01 / 01 / 2020</span> 
-                        to the
-                        <span>30 / 12 / 2020</span>.
-                    </p>
-                    <!-- info -->
-                </li>
-                <!-- items -->
-            </ul>
-            <!-- output -->
-
-        </div>
-        <!-- elmnts -->
-        
-    </section>
+        <!-- mod -->
+    
+    </main>
     <!-- app -->
-        
-</div>        
+
+</div>
 <!-- page -->
+
+
+</body>
+</html>
+
+
