@@ -1,83 +1,70 @@
 // app selectors
 let app = document.querySelector('#app');
-let abo = document.querySelector('#abo');
-let hed = document.querySelector('#hed');
-let edt = document.querySelector('#edt');
-let tml = document.querySelector('#tml');
 let mdl = document.querySelector('#mdl');
+let hps = document.querySelector('#hps');
 
-// nav selectors
-let nav = document.querySelector('#nav');
-let opn = document.querySelector('#opn');
-let icn = document.querySelector('#icn');
-let nvu = document.querySelector('#nvu');
 
-// btn selectors
-let btn_nav = document.querySelector('#btn_nav');
-let btn_ext = document.querySelector('#btn_ext');
-let btn_sub = document.querySelector('#btn_sub');
-let btn_edt = document.querySelector('#btn_edt');
-let btn_tml = document.querySelector('#btn_tml');
-let btn_mdl = document.querySelector('#btn_mdl');
+// sect selectors
+let wel = document.querySelector('#wel');
+let frm = document.querySelector('#frm');
+let dis = document.querySelector('#dis');
+let ovw = document.querySelector('#ovw');
+
+let tml = document.querySelector('#tml');
+
+// let usr = document.querySelector('#usr');
 
 // utl selectors
+let uli = document.querySelector('#uli');
 let pos;
+
+// btn selectors
+let btn_run = document.querySelector('#btn_run');
+let btn_add = document.querySelector('#btn_add');
+
+    // under development
+let btn_sub = document.querySelector('#btn_sub');
+
+let btn_edt = document.querySelector('#btn_edt');
+
+let btn_ext = document.querySelector('#btn_ext');
+
+let btn_tml = document.querySelector('#btn_tml');
+
 
 /*
     EVENTS
 
-        1. ev : btn_nav
-        2. ev : btn_run
-        3. ev : btn_sub
-        4. ev : btn_ext
-        5. ev : btn_edt
-        6. ev : btn_tml
+        
+        1. ev : run
+        2. ev : add
+        3. ev : sub
+        4. ev : ext
+        5. ev : edt
+        6. ev : tml
 
 */
 
-// 1. ev : btn nav
-btn_nav.addEventListener('click', ()=> {
 
-    // validate nav height
-    if (nav.style.display.height != '90vh') {
-        
-        // apply a transition to nav elemnt
-        nav.style.transition = 'all 420ms ease';
-
-        // apply height to nav element
-        nav.style.height = '90vh';
-    
-    }
-    // validate nav ul
-    if (nvu.style.display == 'none') {
-    
-        // display nav ul
-        nvu.style.display = 'flex';
-    }
-    // validate btn class
-    if (icn.className == 'fas fa-bars') {
-    
-        // change btn class
-        icn.className = 'fas fa-times';
-    }
-    else {
-    
-        // reset nav height to default
-        nav.style.height = '15vh';
-        // hide nav ul
-        nvu.style.display = 'none';
-        // default btn class
-        icn.className = 'fas fa-bars';
-
-    }
-
-});
-
-// 2. ev : btn run
+// 1. ev : btn run
 btn_run.addEventListener('click', ()=> {
 
     // init run
     run();
+
+    // test
+    console.log('app starting');
+
+});
+
+// 2. ev : btn add
+btn_add.addEventListener('click', ()=>{
+
+    // init run
+    run();
+
+    // test
+    console.log('usr re-run prog active');
 
 });
 
@@ -97,64 +84,105 @@ btn_sub.addEventListener('click', (e)=>{
 
 // 4. ev : btn ext
 btn_ext.addEventListener('click', ()=> {
-
-    // validate mod
+    
+    // validate mdl
     if (mdl.style.display != 'none') {
+        
         // default mdl style
         mdl.style.display = 'none';
         bdy.style.overflow = 'auto';
-
+        
         // test
-        console.log('mod removed');
-        console.log('form removed');
+        console.log('ext : mdl none');
+        
     }
     else {
         // mdl active
         mdl.style.display = 'grid';
+
+        // test
+        console.log('ext : mdl + frm');
     }
 
 });
 
 // 4. ev : btn edt
+btn_edt.addEventListener('click', ()=> {
+
+    // init edt
+    edt();
+
+});
 
 // 5. ev : btn tml
 
 /*
     FUNCTIONS
-        1.  fn : mob
-        2.  fn : run
-        3.  fn : mod
-        4.  fn : val
-        5.  fn : out
-        6.  fn : edt
-        7.  fn : tml
-        8.  fn : scy
-        9.  fn : cal
-        10. fn : uns
+        
+        1. fn : run
+        2. fn : add
+        3. fn : usr
+        4. fn : mod
+        5. fn : val
+        6. fn : out
+        7. fn : pnb
+        8. fn : scy
+        
+        
+// under development // under development // under development
+// under development // under development // under development
+        
+        9.  fn : tml
+        10.  fn : cal
+        11. fn : uns
+
+// under development // under development // under development
+// under development // under development // under development
+
 */
 
-// 1. fn : mob
-mob = () => {
 
-    // assign nav height
-    nav.style.height = '15vh';
-    // hide nav ul
-    nvu.style.display = 'none';
-
-};
-
-// init mob
-mob();
-
-// 2. fn : run
+// 1. fn : run
 run = () => {
 
     // init mod
     mod();
 
+    // init usr
+    usr();
+
+    // test
+    console.log('run : active');
 };
 
-// 3. fn : mod
+// 2. fn : add
+add = () => {
+
+    // init mod
+    mod();
+
+    // init usr
+    usr();
+
+    // test
+    console.log('add : active');
+};
+
+// 3. fn : usr
+usr = () => {
+
+    // display frm
+    frm.style.display = 'grid';
+
+    // append frm to mdl
+    mdl.appendChild(frm);
+
+    // test
+    console.log('frm : active');
+
+}
+
+// 4. fn : mod
 mod = () => {
 
     // init scy
@@ -172,36 +200,46 @@ mod = () => {
         mdl.style.left = '0';
         mdl.style.width = '100%';
         mdl.style.height = '100%';
-        mdl.style.background = 'var(--black)';
         mdl.style.zIndex = '999';
+
+        // adjust mdl to scy
         mdl.style.marginTop = pos + 'px';
         
         // test
-        console.log('modal active');
+        console.log('mdl : style');
+
     }
     // validate body overflow
     if (bdy.style.overflow != 'hidden') {
-        // apply overflow to body
+        
+        // bdy overflow
         bdy.style.overflow = 'hidden';
+
+        // test
+        console.log('bdy : overflow');
+
     }
     else {
-        // default mdl style
+        // default mdl
         mdl.style.display = 'none';
+
+        // default bdy
         bdy.style.overflow = 'auto';
 
         // test
-        console.log('mod removed');
-        console.log('form removed');
+        console.log('mdl : none');
+
     }
 
-    // append elements to app
+    // append mdl to app
     app.appendChild(mdl);
 
     // test
-    console.log('mdl appended to app');
+    console.log('mdl : active');
+
 };
 
-// 4. fn : val 
+// 5. fn : val 
 val = () => {
 
     // form error selectors
@@ -327,116 +365,131 @@ val = () => {
 
 }
 
-// 5. fn : out
+// 6. fn : out
 out = () => {
 
     // validate views
-    if (bdy.style.overflow == 'hidden') {
-        bdy.style.overflow = 'auto';
-    }
     if (mdl.style.display != 'none') {
+
+        // remove mdl
         mdl.style.display = 'none';
 
         // test
-        console.log('mdl removed');
+        console.log('mdl : removed');
     }
-    if (hed.style.display != 'none') {
-        hed.style.display = 'none';
+    if (wel.style.display != 'none') {
 
-        // test
-        console.log('hed removed');
-    }
-    if (abo.style.display != 'none') {
-        abo.style.display = 'none';
+        // remove wel
+        wel.style.display = 'none';
         
         // test
-        console.log('run removed');
+        console.log('wel : removed');
+    }
+    // validate overflow
+    if (bdy.style.overflow != 'auto') {
+        
+        // overflow bdy
+        bdy.style.overflow = 'auto';
+
+        // test
+        console.log('bdy : auto');
     }
     
-    // out creator
-    let out = document.createElement('section');
-    let plh = document.createElement('h2');
+    // init hps
+    if (hps.style.display == 'none') {
+
+        // display hps
+        hps.style.display = 'grid';
+
+        // test
+        console.log('hps : grid');
+    }
     
-    // out style
-    out.style.position = 'relative';
-    out.style.background = 'lightblue';
+    // pnl creator
+    let pnl = document.createElement('li');
     
-    // placeholder txt
-    plh.innerHTML = 'placeholder text for output';
-    plh.style.border = 'var(--debugging)';
-    plh.style.position = 'absolute';
-    plh.style.top = '0';
-    plh.style.left = '0';
-    plh.style.width = '100%';
-    plh.style.height = '100%';
-    plh.style.display = 'flex';
-    plh.style.justifyContent = 'center';
-    plh.style.alignItems = 'center';
+    // pnl content
+    let pnl_cou = document.createElement('span');
+    let pnl_loc = document.createElement('span');
+    let pnl_str = document.createElement('span');
+    let pnl_end = document.createElement('span');
+
+    // ul att : uli
+    uli.setAttribute('id', 'uli');
     
-    // append plh to out
-    out.appendChild(plh);
-    // append out to app
-    app.appendChild(out);
+    // pnl att : pnl
+    pnl.setAttribute('class', 'pnl');
+
+    // assign input value to pnl content
+    pnl_cou.innerHTML = cou.value + '<br>';
+    pnl_loc.innerHTML = loc.value + '<br>';
+    
+    pnl_str.innerHTML = str.value + '<br>';
+    pnl_end.innerHTML = end.value + '<br>';
+
+    // append panel content to pnl
+    pnl.appendChild(pnl_cou);
+    pnl.appendChild(pnl_loc);
+    pnl.appendChild(pnl_str);
+    pnl.appendChild(pnl_end);
+
+    // append pnl to uli
+    uli.appendChild(pnl);
+
+    // init pnb
+    pnb();
 
     // test
     console.log('out view...'); // out here
+
 };
 
-// 6. fn : edt
-edt = () => {
-    
-    // prv selector
-    let prv = document.getElementsByClassName('prv');
+// 7. fn : pnb
+pnb = () => {
 
-    // loop through prv
-    for (let i = 0; i < prv.length; i++) {
+    // pnl selector [ after pnl has been populated ]
+    let pnl = document.getElementsByClassName('pnl');
 
-        // add event to prv
-        prv[i].addEventListener('click', () => {
+    // pnl loop for ev attachment
+    for (let i = 0; i < pnl.length; i++) {
+        
+        // test
+        console.log(pnl[i]);
+        
+        // ev : pnl btn
+        pnl[i].addEventListener('click', ()=> {
 
-            // assign prv position to relative for mod attachment
-            prv[i].style.position = 'relative';
+            // btn selector
+            let btn = document.querySelector('#btn');
 
-            // validate prv background color
-            if (prv[i].style.background != 'var(--ovl-drk)') {
+            // validate btn
+            if (btn.style.display == 'none') {
                 
-                // provide visual cues
-                prv[i].style.background = 'var(--ovl-drk)';
-                prv[i].style.color = 'var(--white)';
+                // display btn
+                btn.style.display = 'flex';
+
+                // append btn to pnl
+                pnl[i].appendChild(btn);
+
+                // test
+                console.log('bts : btn flex');
             }
             else {
 
-                // reset prv to default
-                prv[i].style.background = 'var(--white)';
+                // btn default
+                btn.style.display = 'none';
+
+                // remove btn from pnl
+                // pnl[i].removeChild(btn);
+
+                // test
+                console.log('bts : btn none');
+
             }
-        
+
         });
-
-        // test
-        console.log(prv[i]);
-    }
-
-}
-
-// 7. fn : tml
-tml = () => {
     
-    // validate tml
-    if (tml.style.display = 'none') {
-        
-        // display tml
-        tml.style.display = 'grid';
-        
-        // remove app elements
-        hed.style.display = 'none';
-        edt.style.display = 'none';
-        run.style.display = 'none';
-    }
-    else {
-
-        // default tml style
-        tml.style.diplay = 'none';
-    }
+    };
 
 };
 
@@ -450,6 +503,10 @@ scy = () => {
     console.log(pos + 'px');
 };
 
+
+// under development // under development // under development
+// under development // under development // under development
+
 // 9. fn : cal
 
 // 10. fn : uns
@@ -462,3 +519,178 @@ uns = () => {
     console.log('uns active, awaiting action...');
 
 }
+
+
+// 7. fn : edt
+// edt = () => {
+    
+    
+//     // validate views
+//     if (frm.style.display == 'grid') {
+        
+//         // remove frm
+//         frm.style.display = 'none';
+
+//         // test
+//         console.log('edt : frm none');
+//     }
+
+//     if (ovw.style.display == 'none') {
+        
+//         // display ovw
+//         ovw.style.display = 'grid';
+
+//         // test
+//         console.log('edt : ovw grid');
+//     }
+//     else {
+
+//         // default ovw
+//         ovw.style.display = 'none';
+
+//         // test
+//         console.log('edt : ovw none');
+
+//     }
+
+
+//     // ev : pnl
+//     pnl.addEventListener('click', ()=> {
+
+//         let edt_frm = document.createElement('form');
+
+//         // pnl span replacements
+//         let edt_cou = document.createElement('input');
+//         let edt_loc = document.createElement('input');
+//         let edt_str = document.createElement('input');
+//         let edt_end = document.createElement('input');
+
+//         edt_frm.style.background = 'var(--white)';
+//         edt_frm.style.height = '50vh';
+//         edt_frm.style.width = '100%';
+
+//         ovw.appendChild(edt_frm);
+
+//         // test
+//         console.log('ev : pnl');
+//     });
+        
+
+    
+
+//     // append ovw to app
+//     app.appendChild(ovw);
+
+// };
+
+
+// box creator [ img placeholder ]
+    // let box = document.createElement('div');
+    
+    // box style
+    // box.style.position = 'absolute';
+    // box.style.top = '0';
+    // box.style.left = '0';
+    // box.style.height = '100%';
+    // box.style.width = '100%';
+    // box.style.border = '2px solid var(--black)';
+
+    // box.style.minHeight = '100px';
+    // box.style.minWidth = '100px';
+
+    // append box to pnl
+    // pnl.appendChild(box);
+
+    // pnl loop
+    // for (let i = 0; i < pnl.length; i++) {
+
+    //     // test
+    //     console.log(pnl[i]);
+
+    //     // ev : pnl
+    //     pnl.addEventListener('click', ()=> {
+
+    //         mod();
+    //     });
+
+    // }
+
+
+
+// pnl loop var
+// for (let i = 0; i < pnl.length; i++) {
+
+//     pnl.style.border = '2px solid var(--white)';
+//     pnl.style.background = '2px solid var(--black)';
+//     pnl.style.color = 'var(--white)';
+
+//     // test
+//     console.log('loop pnl active');
+
+//     // test
+//     console.log(pnl[i]);
+
+// }
+
+
+// 6. fn : edt
+// edt = () => {
+    
+//     // prv selector
+//     let prv = document.getElementsByClassName('prv');
+
+//     // loop through prv
+//     for (let i = 0; i < prv.length; i++) {
+
+//         // add event to prv
+//         prv[i].addEventListener('click', () => {
+
+//             // assign prv position to relative for mod attachment
+//             prv[i].style.position = 'relative';
+
+//             // validate prv background color
+//             if (prv[i].style.background != 'var(--ovl-drk)') {
+                
+//                 // provide visual cues
+//                 prv[i].style.background = 'var(--ovl-drk)';
+//                 prv[i].style.color = 'var(--white)';
+//             }
+//             else {
+
+//                 // reset prv to default
+//                 prv[i].style.background = 'var(--white)';
+//             }
+        
+//         });
+
+//         // test
+//         console.log(prv[i]);
+//     }
+
+// }
+
+// // 7. fn : tml
+// tml = () => {
+    
+//     // validate tml
+//     if (tml.style.display = 'none') {
+        
+//         // display tml
+//         tml.style.display = 'grid';
+        
+//         // remove app elements
+//         hed.style.display = 'none';
+//         edt.style.display = 'none';
+//         run.style.display = 'none';
+//     }
+//     else {
+
+//         // default tml style
+//         tml.style.diplay = 'none';
+//     }
+
+// };
+
+// under development // under development // under development
+// under development // under development // under development
+

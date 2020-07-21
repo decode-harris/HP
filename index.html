@@ -14,8 +14,7 @@
     <script defer src="src/js/index.js"></script>
     <!-- libs -->
     <script src="https://kit.fontawesome.com/4dff4a55ad.js" crossorigin="anonymous"></script>
-    <!-- fonts -->
-    
+
 
 </head>
 <body id="bdy">
@@ -26,78 +25,118 @@
     <!-- app -->
     <main id="app">
 
-        <!-- header -->
-        <header id="hed">
+        <!-- mdl -->
+        <div id="mdl" style="display:none"></div>
+        <!-- mdl -->
 
+        <!-- frm -->
+        <section id="frm" style="display:none">
+            
             <!-- elmnts -->
             <div class="elmnts">
-                <!-- nav -->
-                <nav id="nav">
-                    <!-- btn nav -->
-                    <button id="btn_nav"><i id="icn" class="fas fa-bars"></i></button>
-                    <!-- btn nav -->
+                <!-- btn ext -->
+                <button id="btn_ext"><i class="fas fa-times"></i></button>
+                <!-- btn ext -->
 
-                    <!-- nvu -->
-                    <ul id="nvu">
-                        <!-- li -->
-                        <li><button id="btn_inf"><a href="lay.html">about</a></button></li>
-                        <li><button id="btn_app"><a href="app.html">app</a></button></li>
-                        <li><button id="btn_mor"><a href="lay.html">more</a></button></li>
-                        <!-- li -->
-                    </ul>
-                    <!-- nvu -->
-                </nav>
-                <!-- nav -->
+                <!-- form -->
+                <form>
+                    <!-- form title -->
+                    <h4>hps</h4>
+                    <p>holiday planning system</p>
+
+                    <!-- form inputs -->
+                    <label for="cou">country <br> <span id="cou_err"></span></label>
+                    <input type="text" name="cou" id="cou" class="inp">
+                    <label for="loc">location <br> <span id="loc_err"></span></label>
+                    <input type="text" name="loc" id="loc" class="inp">
+                    <label for="str">start <br> <span id="str_err"></span></label>
+                    <input type="date" name="str" id="str" class="inp">
+                    <label for="end">end <br> <span id="end_err"></span></label>
+                    <input type="date" name="end" id="end" class="inp">
+                    <!-- form inputs -->
+
+                    <!-- submit -->
+                    <button id="btn_sub">submit</button>
+                    <!-- submit -->
+
+                </form>
+                <!-- form -->
             </div>
             <!-- elmnts -->
-        
-        </header>
-        <!-- header -->
 
-        <!-- run -->
-        <section id="abo">
+        </section>
+        <!-- frm -->
+
+        <!-- hps -->
+        <section id="hps" style="display:none">
+            
             <!-- elmnts -->
             <div class="elmnts">
+
+                <div id="btn" style="display:none">
+                    <!-- btn edt -->
+                    <button id="btn_edt"><i class="far fa-edit"></i></button>
+                    
+                    <!-- btn img -->
+                    <button id="btn_img"><i class="far fa-image"></i></button>
+
+                    <!-- btn clr -->
+                    <button id="btn_clr"><i class="fas fa-fill"></i></button>
+
+                </div>
+                
+                <!-- attach js component here -->
+                
+                <!-- uli -->
+                <ul id="uli"></ul>
+                <!-- uli -->
+                
+                <!-- attach js component here -->
+                
+            </div>
+            <div class="elmnts">
+                <!-- how to add -->
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <!-- how to add -->
+
+                <!-- btn add -->
+                <button id="btn_add">add</button>
+                <!-- btn add -->
+
+            </div>
+            <!-- elmnts -->
+
+        </section>
+        <!-- hps -->
+
+
+
+    <!-- under development -->
+        <!-- wel -->
+        <section id="wel">
+            <!-- elmnts -->
+            <div class="elmnts">
+                <!-- about -->
                 <h3>how to begin</h3>
                 <p>
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, quidem.
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, quidem.
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, quidem.
                 </p>
-                
-                
+                <!-- about -->
             </div>
             <div class="elmnts">
                 <!-- btn run -->
-                <button id="btn_run">run</button>
+                <button id="btn_run">start</button>
                 <!-- btn run -->
             </div>
             <!-- elmnts -->
 
         </section>
-        <!-- run -->
+        <!-- wel -->
+    <!-- under development -->
 
-        <!-- edt -->
-        <section id="edt" style="display:none">
-
-            <!-- elmnts -->
-            <div class="elmnts">
-                <!-- edt : frm -->
-            </div>
-            <div class="elmnts">
-                <!-- edt : img -->
-            </div>
-            <div class="elmnts">
-                <!-- edt : quo -->
-            </div>
-            <div class="elmnts">
-                <!-- edt : pnl -->
-            </div>
-            <!-- elmnts -->
-
-        </section>
-        <!-- edt -->
-
+    <!-- under development -->
         <!-- tml -->
         <section id="tml" style="display:none">
             
@@ -123,45 +162,8 @@
         
         </section>
         <!-- tml -->
+    <!-- under development -->
 
-        <!-- mod -->
-        <div id="mdl" style="display:none">
-
-            <!-- elmnts -->
-            <div class="elmnts">
-                <!-- btn ext -->
-                <button id="btn_ext"><i class="fas fa-times"></i></button>
-                <!-- btn ext -->
-
-                <!-- form title -->
-                <h3>where to next?</h3>
-                <p>create a holiday timline today!</p>
-                <!-- form title -->
-            </div>
-            <div class="elmnts">
-                <!-- form -->
-                <form id="frm">
-                    <label for="cou">country <br> <span id="cou_err"></span></label>
-                    <input type="text" name="cou" id="cou" class="inp">
-                    <label for="loc">location <br> <span id="loc_err"></span></label>
-                    <input type="text" name="loc" id="loc" class="inp">
-                    <label for="str">start <br> <span id="str_err"></span></label>
-                    <input type="date" name="str" id="str" class="inp">
-                    <label for="end">end <br> <span id="end_err"></span></label>
-                    <input type="date" name="end" id="end" class="inp">
-                </form>
-                <!-- form -->
-            </div>
-            <div class="elmnts">
-                <!-- submit -->
-                <button id="btn_sub">submit</button>
-                <!-- submit -->
-            </div>
-            <!-- elmnts -->
-                    
-        </div>
-        <!-- mod -->
-    
     </main>
     <!-- app -->
 
@@ -171,5 +173,3 @@
 
 </body>
 </html>
-
-
