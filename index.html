@@ -15,48 +15,73 @@
     <!-- libs -->
     <script src="https://kit.fontawesome.com/4dff4a55ad.js" crossorigin="anonymous"></script>
 
-
 </head>
-<body id="bdy">
-
-    <!-- page -->
+<body>
+<!-- page -->
 <div class="page">
 
-    <!-- app -->
-    <main id="app">
+    <!-- hps -->
+    <main id="hps">
+        
+        <!-- sections -->
+        <section id="wel">
+        <!-- wel -->
 
-        <!-- mdl -->
-        <div id="mdl" style="display:none"></div>
-        <!-- mdl -->
+            <!-- elmnts -->
+            <div class="elmnts">
+                
+                <!-- app info -->
+                <h2>HPS</h2>
+                <h5>how to use</h5>
+                <p>
+                    Click the start button to begin creating a person travel 
+                    timeline. Track destination, cities, dates and much more!
+                </p>
+                <!-- app info -->
+    
+                <!-- app btn -->
+                <button id="run">start</button>
+                <!-- app btn -->
 
-        <!-- frm -->
-        <section id="frm" style="display:none">
+            </div>
             
+            <!-- under development -->
+            <button id="clr" style="display: none;">color</button>
+            <button id="edt" style="display: none;">edit</button>
+            <!-- under development -->
+            
+        <!-- wel -->
+        </section>
+        <section id="frm" style="display:none">
+        <!-- frm -->
+
             <!-- elmnts -->
             <div class="elmnts">
                 <!-- btn ext -->
-                <button id="btn_ext"><i class="fas fa-times"></i></button>
+                <button id="ext"><i class="fas fa-times"></i></button>
                 <!-- btn ext -->
+
+                <!-- frm title -->
+                <h4>hps</h4>
+                <p>holiday planning system</p>
+                <!-- frm title -->
 
                 <!-- form -->
                 <form>
-                    <!-- form title -->
-                    <h4>hps</h4>
-                    <p>holiday planning system</p>
-
+                    
                     <!-- form inputs -->
-                    <label for="cou">country <br> <span id="cou_err"></span></label>
+                    <label for="cou">country <br> <span id="err_cou"></span></label>
                     <input type="text" name="cou" id="cou" class="inp">
-                    <label for="loc">location <br> <span id="loc_err"></span></label>
+                    <label for="loc">location <br> <span id="err_loc"></span></label>
                     <input type="text" name="loc" id="loc" class="inp">
-                    <label for="str">start <br> <span id="str_err"></span></label>
+                    <label for="str">start <br> <span id="err_str"></span></label>
                     <input type="date" name="str" id="str" class="inp">
-                    <label for="end">end <br> <span id="end_err"></span></label>
+                    <label for="end">end <br> <span id="err_end"></span></label>
                     <input type="date" name="end" id="end" class="inp">
                     <!-- form inputs -->
 
                     <!-- submit -->
-                    <button id="btn_sub">submit</button>
+                    <button id="sub">submit</button>
                     <!-- submit -->
 
                 </form>
@@ -64,112 +89,63 @@
             </div>
             <!-- elmnts -->
 
-        </section>
         <!-- frm -->
-
-        <!-- hps -->
-        <section id="hps" style="display:none">
-            
+        </section>
+        <section id="tml" style="display: none;">
+        <!-- tml -->
             <!-- elmnts -->
             <div class="elmnts">
-
-                <div id="btn" style="display:none">
-                    <!-- btn edt -->
-                    <button id="btn_edt"><i class="far fa-edit"></i></button>
-                    
-                    <!-- btn img -->
-                    <button id="btn_img"><i class="far fa-image"></i></button>
-
-                    <!-- btn clr -->
-                    <button id="btn_clr"><i class="fas fa-fill"></i></button>
-
-                </div>
-                
-                <!-- attach js component here -->
-                
                 <!-- uli -->
                 <ul id="uli"></ul>
                 <!-- uli -->
+
+                <!-- btn -->
+                <div id="btn" style="display:none">
+                    
+                    <!-- inner btns -->
+                    <button id="edd"><i class="far fa-edit"></i></button>
+                    <button id="cll"><i class="fas fa-fill"></i></button>
+                    <button id="unn"><i class="far fa-image"></i></button>
+                    <!-- inner btns -->
                 
-                <!-- attach js component here -->
-                
+                </div>
+                <!-- btn -->
             </div>
             <div class="elmnts">
-                <!-- how to add -->
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <!-- how to add -->
-
-                <!-- btn add -->
-                <button id="btn_add">add</button>
-                <!-- btn add -->
-
+                <!-- add -->
+                <button id="add">add</button>
+                <!-- add -->
             </div>
             <!-- elmnts -->
 
-        </section>
-        <!-- hps -->
-
-
-
-    <!-- under development -->
-        <!-- wel -->
-        <section id="wel">
-            <!-- elmnts -->
-            <div class="elmnts">
-                <!-- about -->
-                <h3>how to begin</h3>
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, quidem.
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, quidem.
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, quidem.
-                </p>
-                <!-- about -->
-            </div>
-            <div class="elmnts">
-                <!-- btn run -->
-                <button id="btn_run">start</button>
-                <!-- btn run -->
-            </div>
-            <!-- elmnts -->
-
-        </section>
-        <!-- wel -->
-    <!-- under development -->
-
-    <!-- under development -->
         <!-- tml -->
-        <section id="tml" style="display:none">
+        </section>
+        <section id="col" style="display: none;">
+            <!-- color -->
+
+            <!-- elmnts -->
+            <div class="elmnts"></div>
+            <div class="elmnts"></div>
+            <!-- elmnts -->
             
-            <!-- elmnts -->
-            <div class="elmnts">
-                <!-- ovv -->
-                <ul id="ovv">
-                    <!-- ovv li -->
-                    <li>
-                        <p>overview item 01</p>
-                    </li>
-                    <li>
-                        <p>overview item 02</p>
-                    </li>
-                    <li>
-                        <p>overview item 03</p>
-                    </li>
-                    <!-- ovv li -->
-                </ul>
-                <!-- ovv -->
-            </div>
-            <!-- elmnts -->
-        
+            <!-- color -->
         </section>
-        <!-- tml -->
-    <!-- under development -->
+        <section id="edt" style="display: none;">
+            <!-- edi -->
 
+            <!-- elmnts -->
+            <div class="elmnts"></div>
+            <div class="elmnts"></div>
+            <!-- elmnts -->
+            
+            <!-- edi -->
+        </section>
+        <!-- sections -->
+    
     </main>
-    <!-- app -->
+    <!-- hps -->
 
 </div>
 <!-- page -->
-
-
 </body>
 </html>

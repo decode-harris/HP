@@ -18,8 +18,7 @@
 
     /* font family */
     --font-main: 'Raleway', sans-serif;
-    /* font-family: 'Raleway', sans-serif; */
-
+    
     /* heading mobile */
     --h1-mob: 2.2rem;
     --h2-mob: 2rem;
@@ -59,7 +58,19 @@
 
 }
 
-/* global : page */
+/* 
+
+    globals
+    1. page
+    2. grid
+    3. flex
+    4. btns
+    5. headings
+    6. text
+
+*/
+
+/* 1. page */
 .page {
     display: flex;
     flex-direction: column;
@@ -68,12 +79,14 @@
     position: relative;
     height: 100%;
     width: 100%;
+
+    background: var(--white);
 }
 .page main {
     max-width: 1920px;
 }
 
-/* global : grid */
+/* 2. grid */
 main,
 section {
     display: grid;
@@ -81,24 +94,48 @@ section {
     grid-auto-rows: minmax(50px, auto);
     min-height: 100vh;
     width: 100%;
+    
+    /* dev */
+    border: var(--wireframe);
 }
 
-/* global : flex */
+/* 3. flex */
 .elmnts {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    grid-column: span 6;
+    grid-row: span 1;
     padding: var(--sm);
     height: 100%;
     width: 100%;
 
     /* dev */
     border: var(--debugging);
-
 }
 
-/* global : headings */
+/* 4. btns */
+section button {
+    display: flex;
+    justify-content: flex-start;
+    background: var(--black);
+    border: 2px solid var(--black);
+    color: var(--white);
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+    padding: var(--sm);
+    text-transform: capitalize;
+    min-height: 30px;
+    width: 60%;
+    transition: 420ms all ease-in;
+}
+section button i {
+    color: var(--white);
+}
+
+/* 5. headings */
 h1 {font-size: var(--h1-mob);}
 h2 {font-size: var(--h2-mob);}
 h3 {font-size: var(--h3-mob);}
@@ -111,62 +148,76 @@ h2, h3, h4, h5 {
     text-transform: capitalize;
 }
 
-/* global : fonts */
+/* 6. text */
 p {
     color: var(--grey);
     font-size: var(--txt-sm);
     letter-spacing: 2px;
     line-height: 1.6;
-    padding-bottom: var(--md);
 }
 
-/* global : buttons */
-section button {
-    background: transparent;
-    border: 2px solid var(--black);
-    color: var(--black);
-    font-weight: bold;
-    letter-spacing: 5px;
-    margin-bottom: 10px;
-    padding: var(--sm);
-    text-transform: capitalize;
-    min-height: 30px;
-    width: 60%;
-}
+/* 
+    application
 
-/* section : app */
-#app {
-    font-family: var(--font-main);
+    1. main : hps
+    2. section : wel
+    3. section : frm
+    4. section : tml
+    5. section : col
+    6. section : edt
+
+*/
+
+/* 1. hps */
+#hps {
     position: relative;
     min-height: 100vh;
-    height: 100%;
+    width: 100%;
+
+    background: lightcoral;
 }
-#app section {
+#hps section {
     grid-column: span 6;
-    grid-row: span 4;
+    grid-row: span 1;
+    background: var(--white);
 }
 
-/* section : frm */
+/* 2. wel */
+#wel h2,
+#wel h5,
+#wel p {
+    padding-left: var(--md);
+}
+#wel p {
+    padding-bottom: var(--md);
+}
+#wel button {
+    margin-left: var(--md);
+}
+
+/* 3. frm */
 #frm {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
     background: var(--white);
-    height: 100vh;
-    width: 100vw;
     padding: var(--sm);
-    position: relative;
 }
 #frm h4 {
     color: var(--main);
     text-transform: uppercase;
 }
-#frm .elmnts:nth-child(1) {
-    grid-column: span 6;
-    grid-row: span 1;
+#frm .elmnts {
+    position: relative;
+    border: 3px solid var(--black);
 }
 /* frm : form */
 #frm form {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
     height: 100%;
     width: 100%;
@@ -198,55 +249,46 @@ section button {
     margin-bottom: var(--md);
 }
 /* frm : btn */
-#frm #btn_ext {
+#frm #sub {
+    width: 100%;
+}
+#frm #ext {
     position: absolute;
-    top: var(--sm);
-    right: var(--sm);
+    top: 0;
+    right: 0;
     width: 50px;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: none;
     background: transparent;
-    border: 3px solid var(--black);
-    color: var(--main);
+    transition: all 300ms ease-in;
 }
-#frm #btn_ext i {
+#frm #ext i {
     color: var(--black);
-    font-size: var(--txt-sm);
-}
-#frm #btn_sub {
-    width: 100%;
-    background: var(--black);
-    color: var(--white);
+    font-size: 1.5rem;
 }
 
-/* section : hps */
-#hps {
+/* section : tml */
+#tml {
     background: var(--white);
     min-height: 100vh;
 }
-#hps p {
-    text-align: center;
+#tml .elmnts:nth-child(1) {
+    justify-content: center;
+    align-items: center;
 }
-#hps .elmnts:nth-child(1) {
-    grid-column: span 6;
-    grid-row: span 2;
-}
-#hps .elmnts:nth-child(2) {
-    grid-column: span 6;
-    grid-row: span 1;
-}
-/* hps : list */
-#hps ul {
+/* tml : list */
+#tml ul {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: flex-start;
     width: 100%;
     height: 100%;
 }
-#hps li {
+#tml li {
     border: 2px solid var(--black);
     list-style-type: none;
     margin-bottom: var(--sm);
@@ -254,136 +296,25 @@ section button {
     position: relative;
     width: 100%;
 }
-#hps span {
+#tml li p {
     font-size: var(--txt-sm);
     text-transform: capitalize;
     letter-spacing: 2px;
 }
-/* hps : btns */
-#hps #btn {
+/* tml : btns */
+#tml #btn {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     min-height: 100px;
     width: 100%;
 }
-#hps #btn button {
+#tml #btn button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     transition: 400ms all ease-in;
 }
-#hps #btn i {
-    transition: 400ms all ease-in;
-}
-#hps #btn button:hover {
-    background: var(--black);
-    transition: 400ms all ease-in-out;
-}
-#hps #btn button:hover i {
-    color: var(--white);
-    transition: 400ms all ease-in-out;
-}
-#hps #btn_add {
-    background: transparent;
-    transition: 400ms all ease-in;
-}
-#hps #btn_add:hover {
-    background: var(--black);
-    transition: 400ms all ease-in-out;
-    color: var(--white);
-}
-
-
-
-/* under design *//* under design *//* under design */
-/* under design *//* under design *//* under design */
-
-
-/* section : wel */
-#wel .elmnts:nth-child(1) {
-    grid-column: span 6;
-    grid-row: span 1;
-
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-#wel .elmnts:nth-child(2) {
-    grid-column: span 6;
-    grid-row: span 1;
-}
-/* wel : btn */
-#wel #btn_run {
-    background: transparent;
-    border: 3px solid var(--black);
-    color: var(--black);
-    font-size: var(--txt-sm);
-    font-weight: bold;
-    letter-spacing: 5px;
-    min-height: 22px;
-    padding: var(--sm);
-    width: 60%;
-}
-
-/* div : mdl */
-#mdl {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-height: 100vh;
-    width: 100%;
-    background: var(--ovl-drk);
-}
-
-/* edt : layout */
-#edt {
-    /* dev */
-    border: var(--wireframe);
-}
-#edt .elmnts {
-    border: var(--debugging);
-}
-#edt .elmnts:nth-child(1) {
-    grid-column: span 6;
-    grid-row: span 1;
-}
-#edt .elmnts:nth-child(2) {
-    grid-column: span 6;
-    grid-row: span 1;
-}
-#edt .elmnts:nth-child(3) {
-    grid-column: span 6;
-    grid-row: span 1;
-}
-
-/* tml : layout */
-#tml {
-    /* dev */
-    border: var(--wireframe);
-}
-#tml .elmnts {
-    border: var(--debugging);
-}
-#tml .elmnts:nth-child(1) {
-    grid-column: span 6;
-    grid-row: span 1;
-}
-#tml .elmnts:nth-child(2) {
-    grid-column: span 6;
-    grid-row: span 1;
-}
-#tml .elmnts:nth-child(3) {
-    grid-column: span 6;
-    grid-row: span 1;
-}
-
-
-/* under design *//* under design *//* under design */
-/* under design *//* under design *//* under design */
-
-
-/* media : desktop */
-@media (min-width: 960px) {}
